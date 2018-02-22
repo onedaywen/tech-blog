@@ -1,4 +1,5 @@
 **主要涉及js，vue ，react，webpack等 **
+* [connect中间件源码解析](https://github.com/onedaywen/tech-blog/issues/12)
 * [富文本编辑器wangEditor源码分析](https://github.com/onedaywen/tech-blog/issues/7)
 * [vue mapState函数原理分析](https://github.com/onedaywen/tech-blog/issues/6)
 * [vue-router源码分析](https://github.com/onedaywen/tech-blog/issues/4)
