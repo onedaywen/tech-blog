@@ -2,7 +2,10 @@
 * [connect中间件源码解析](https://github.com/onedaywen/tech-blog/issues/12)
 
 ## javascript
+* [开发实战中Array总结](https://github.com/onedaywen/tech-blog/issues/15)
 * [富文本编辑器wangEditor源码分析](https://github.com/onedaywen/tech-blog/issues/7)
+
+
 
 ## mvc、mvvm框架
 * [vue mapState函数原理分析](https://github.com/onedaywen/tech-blog/issues/6)
