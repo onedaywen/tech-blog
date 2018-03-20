@@ -11,6 +11,7 @@
 
 
 ## mvc、mvvm框架
+* [如何将常用弹窗操作Promise化](https://github.com/onedaywen/tech-blog/issues/20)
 * [vue mapState函数原理分析](https://github.com/onedaywen/tech-blog/issues/6)
 * [vue-router源码分析](https://github.com/onedaywen/tech-blog/issues/4)
 * [Vue.use原理分析](https://github.com/onedaywen/tech-blog/issues/3)
