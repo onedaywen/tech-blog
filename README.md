@@ -4,7 +4,7 @@
 ## javascript
 * [对es6模块化、requirejs amd规范、seajs cmd规范的一点思考](https://github.com/onedaywen/tech-blog/issues/22)
 * [开发实战中Array总结](https://github.com/onedaywen/tech-blog/issues/15)
-* [富文本编辑器wangEditor源码分析](https://github.com/onedaywen/tech-blog/issues/7)
+* [富文本编辑器wangEditor使用经验](https://github.com/onedaywen/tech-blog/issues/7)
 * [玩具级Promise实现](https://github.com/onedaywen/tech-blog/issues/17)
 
 
