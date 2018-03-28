@@ -29,3 +29,6 @@
 
 ## HTTP协议
 * [HTTP缓存浅析](https://github.com/onedaywen/tech-blog/issues/24)
+
+## 设计模式
+* [工厂模式](https://github.com/onedaywen/tech-blog/issues/27)
