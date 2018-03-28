@@ -32,3 +32,4 @@
 
 ## 设计模式
 * [工厂模式](https://github.com/onedaywen/tech-blog/issues/27)
+* [闭包实现单例模式-vue缓存编译模板](https://github.com/onedaywen/tech-blog/issues/27)
