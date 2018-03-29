@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<style> 
+#myDIV {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /*-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */*/
+    /*transition: width 2s;*/
+    
+}
+.active {
+	animation: bwidth 2s;
+}
+@keyframes bwidth {
+	0 {
+		width: 100px;
+	}
+	100% {
+		width: 200px;
+	}
+}
+#myDIV:hover {
+    /*width: 400px;*/
+}
+</style>
+</head>
+<body>
+<div id="myDIV"></div>
+<button onclick="clickfn()">click</button>
+<script>
+//  Safari 3.1 到 6.0 版本代码
+// document.getElementById("myDIV").addEventListener("webkitTransitionEnd", myFunction);
+// // 标准语法
+// document.getElementById("myDIV").addEventListener("transitionend", myFunction);
+// function myFunction() {
+//     this.innerHTML = "过渡事件触发 - 过渡已完成";
+//     this.style.backgroundColor = "pink";
+//     console.log(999)
+// }
+// 
+function clickfn () {
+	document.getElementById("myDIV").className = 'active';
+}
+//  Safari 3.1 到 6.0 版本代码
+document.getElementById("myDIV").addEventListener("webkitAnimationEnd", myFunction);
+// 标准语法
+document.getElementById("myDIV").addEventListener("animationend", myFunction);
+function myFunction() {
+    // this.innerHTML = "过渡事件触发 - 过渡已完成";
+    // this.style.backgroundColor = "pink";
+    document.getElementById("myDIV").className = '';
+    console.log(999)
+}
+</script>
+
+</body>
+</html>
