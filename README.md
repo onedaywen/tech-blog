@@ -7,6 +7,7 @@
 * [富文本编辑器wangEditor使用经验](https://github.com/onedaywen/tech-blog/issues/7)
 * [玩具级Promise实现](https://github.com/onedaywen/tech-blog/issues/17)
 * [常见正则总结](https://github.com/onedaywen/tech-blog/issues/30)
+* [移动端适配](https://github.com/onedaywen/tech-blog/issues/31)
 
 
 
