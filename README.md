@@ -8,6 +8,7 @@
 * [玩具级Promise实现](https://github.com/onedaywen/tech-blog/issues/17)
 * [常见正则总结](https://github.com/onedaywen/tech-blog/issues/30)
 * [移动端适配](https://github.com/onedaywen/tech-blog/issues/31)
+* [requestAnimationFrame笔记](https://github.com/onedaywen/tech-blog/issues/33)
 
 
 
