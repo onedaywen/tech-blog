@@ -1,5 +1,6 @@
 ## nodejs
 * [connect中间件源码解析](https://github.com/onedaywen/tech-blog/issues/12)
+* [chrome55+调试nodejs](https://github.com/onedaywen/tech-blog/issues/12)
 
 ## javascript
 * [对es6模块化、requirejs amd规范、seajs cmd规范的一点思考](https://github.com/onedaywen/tech-blog/issues/22)
