@@ -6,6 +6,7 @@
 * [chrome55+调试nodejs](https://github.com/onedaywen/tech-blog/issues/39)
 
 ## javascript
+* [函数curry](https://github.com/onedaywen/tech-blog/issues/44)
 * [async await实现实现异步的reduce](https://github.com/onedaywen/tech-blog/issues/43)
 * [对es6模块化、requirejs amd规范、seajs cmd规范的一点思考](https://github.com/onedaywen/tech-blog/issues/22)
 * [开发实战中Array总结](https://github.com/onedaywen/tech-blog/issues/15)
