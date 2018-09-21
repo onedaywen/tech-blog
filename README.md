@@ -1,4 +1,5 @@
 ## nodejs
+* [nuxtjs服务端渲染](https://github.com/onedaywen/tech-blog/issues/45)
 * [mongodb笔记](https://github.com/onedaywen/tech-blog/issues/42)
 * [Buffer笔记](https://github.com/onedaywen/tech-blog/issues/41)
 * [koa源码解析](https://github.com/onedaywen/tech-blog/issues/40)
