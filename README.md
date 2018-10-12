@@ -1,4 +1,5 @@
 ## nodejs
+* [项目迁移：利用fs path模块批量替换apiCode成对应的request path](https://github.com/onedaywen/tech-blog/issues/47)
 * [nuxtjs服务端渲染](https://github.com/onedaywen/tech-blog/issues/45)
 * [mongodb笔记](https://github.com/onedaywen/tech-blog/issues/42)
 * [Buffer笔记](https://github.com/onedaywen/tech-blog/issues/41)
