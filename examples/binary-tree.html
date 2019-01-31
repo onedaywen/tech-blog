@@ -159,11 +159,15 @@
 
 	// 递归实现先序
 	BinaryTree.prototype.preOrder = function (node) {
-		if (node === null) return
-		this.preOrderList.push(node)
-		// console.log(node.show())
-		this.preOrder(node.left)
-		this.preOrder(node.right)
+		const walk = (node) => {
+			if (node === null) return
+			list.push(node)
+			walk(node.left)
+			walk(node.right)
+		}
+		let list = []
+		walk(node)
+		return list
 	}
 	// 非递归实现先序
 	BinaryTree.prototype._preOrder = function (node) {
@@ -187,11 +191,15 @@
 	}
 	// 递归实现中序
 	BinaryTree.prototype.inOrder = function (node) {
-		if (node === null) return
-		this.inOrder(node.left)
-		console.log(node.data.id)
-		this.inOrderList.push(node)
-		this.inOrder(node.right)
+		const walk = (node) => {
+			if (node === null) return
+			walk(node.left)
+			list.push(node)
+			walk(node.right)
+		}
+		let list = []
+		walk(node)
+		return list
 	}
 	// 迭代实现中序
 	BinaryTree.prototype._inOrder = function (node) {
@@ -210,14 +218,19 @@
 				list.push(top)
 			}
 		}
+		return list
 	}
 	// 递归实现后序
 	BinaryTree.prototype.afterOrder = function (node) {
-		if (node === null) return
-		this.afterOrder(node.left)
-		this.afterOrder(node.right)
-		console.log(node.data.id)
-		this.afterOrderList.push(node)
+		let list = []
+		const walk = (node) => {
+			if (node === null) return
+			walk(node.left)
+			walk(node.right)
+			list.push(node)
+		}
+		walk(node)
+		return list
 	}
 	// 迭代实现后序
 	/*
