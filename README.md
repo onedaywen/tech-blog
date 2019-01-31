@@ -22,6 +22,8 @@
 * [requestAnimationFrame笔记](https://github.com/onedaywen/tech-blog/issues/33)
 * [多叉树的迭代遍历判断对象是否具有空值](https://github.com/onedaywen/tech-blog/issues/55)
 * [js实现call](https://github.com/onedaywen/tech-blog/issues/56)
+* [二叉树的先序递归遍历、迭代遍历](https://github.com/onedaywen/tech-blog/issues/57)
+
 
 ## mvc、mvvm框架
 * [原生js实现最简单的vue实例勾子机制](https://github.com/onedaywen/tech-blog/issues/26)
