@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.icon {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			border: solid 1px #ddd;
+			cursor: pointer;
+			margin-top: 9px;
+			line-height: 12px;
+		}
+		.tree-item {
+			height: 30px;
+			line-height: 30px;
+			border: solid 1px #ddd;
+		}
+		.chain-box {
+			margin-top: 20px;
+			font-size: 0;
+			height: 100px;
+		}
+		.chain-item {
+			position: relative;
+			display: inline-block;
+			text-align: left;
+			font-size: 14px;
+			margin: 0 20px;
+		}
+		.chain-item::after {
+			display: block;
+			content: '';
+			position: absolute;
+			right: -40px;
+			top: 50%;
+			width: 40px;
+			height: 0;
+			border-top: solid 1px #999;
+
+		}
+		.chain-item:last-of-type::after {
+			display: none;
+		}
+		.chain-item-top {
+			position: absolute;
+			width: 100px;
+			left: 0;
+			top: -40px;
+		}
+		.chain-item-top::after {
+			display: block;
+			content: '';
+			position: absolute;
+			left: 25px;
+			top: 30px;
+			width: 20px;
+			height: 0;
+			border-top: solid 1px red;
+			transform: rotate(90deg);
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<div>
+		<button @click="openAll">展开所有</button>
+	</div>
+	<div class="chain-box">
+		<span v-for="(node, index) in mainChain" :key="index" class="chain-item" @click="clickChainNode(node)">
+			<p class="chain-item-top" v-if="node.left">{{ node.left.data.label }}</p>
+			<p>{{ node.data.label }}</p>
+		</span>
+	</div>
+	<div class="tree-item"
+		v-for="(node, index) in renderArr" 
+		:key="node.uniqueKey"
+		:style="{
+			paddingLeft: node.depth * 10 + 'px'
+		}"
+		@click="clickNode(node)">
+		<i class="icon icon-open" v-if="(node.left) || (node.right)">+</i>
+		<i class="icon icon-checkbox">v</i>
+		{{ node.data.label }}
+	</div>
+</div>
+
+<script type="text/javascript" src="./vue.js"></script>
+<script type="text/javascript">
+	const uniqueKey = (() => {
+	  let id = 10000 
+	  return () => {
+	    id++
+	    return id
+	  }
+	})()
+	/*创建节点*/
+	const Node = function(data){
+		this.data = data;
+		this.left = null;
+		this.right = null;
+		this.depth = 0
+		this.visible = false
+		this.parent = null
+	}
+	Node.prototype.show = function () {
+		return this.data
+	}
+	function BinaryTree(){
+		this.root = null
+		this.preOrderList = []
+		this.inOrderList = []
+		this.afterOrderList = []
+		this.layerData = []
+	}
+	BinaryTree.prototype.insert = function(data){
+		const newNode = new Node(data)
+		if (this.root==null) {
+			this.root = newNode
+			newNode.depth = 1
+			newNode.visible = true
+			newNode.uniqueKey = uniqueKey()
+			return this
+		}
+		let curr = this.root
+		let depth = 1
+		while (curr) {
+			depth++
+			if (newNode.data.id < curr.data.id) {
+				if (curr.left === null) {
+					newNode.depth = depth
+					newNode.visible = false
+					newNode.uniqueKey = uniqueKey()
+					newNode.parent = curr
+					curr.left = newNode
+					return this
+				} else {
+					curr = curr.left
+				}
+			} else {
+				if (curr.right === null) {
+					newNode.depth = depth
+					newNode.visible = false
+					newNode.uniqueKey = uniqueKey()
+					newNode.parent = curr
+					curr.right = newNode
+					return this
+				} else {
+					curr = curr.right
+				}
+			}
+		}
+	}
+	// 什么序是以根节点的访问顺序来命名的
+	// 先序：先序遍历先访问根节点，然后以同样方式访问左子树和右子树。
+	// 中序：先访问左子树，再访问根节点，最后访问右子树。
+	// 后序：后序遍历先访问叶子节点，从左子树到右子树，再到根节点
+
+	// 递归实现先序
+	BinaryTree.prototype.preOrder = function (node) {
+		if (node === null) return
+		this.preOrderList.push(node)
+		// console.log(node.show())
+		this.preOrder(node.left)
+		this.preOrder(node.right)
+	}
+	// 非递归实现先序
+	BinaryTree.prototype._preOrder = function (node) {
+		if (node === null) return
+		let curr = node
+		let stack = []
+		let list = []
+		while (curr || stack.length) {
+			while (curr) {
+				console.log(curr.data.id)
+				stack.push(curr)
+				curr = curr.left
+			}
+			if (stack.length) {
+				let top = stack.pop()
+				curr = top.right
+			}
+		}
+		console.log(list)
+		return list
+	}
+	// 递归实现中序
+	BinaryTree.prototype.inOrder = function (node) {
+		if (node === null) return
+		this.inOrder(node.left)
+		console.log(node.data.id)
+		this.inOrderList.push(node)
+		this.inOrder(node.right)
+	}
+	// 迭代实现中序
+	BinaryTree.prototype._inOrder = function (node) {
+		if (node === null) return
+		let curr = node || this.root
+		let stack = []
+		let list = []
+		while (curr || stack.length) {
+			while (curr) {
+				stack.push(curr)
+				curr = curr.left
+			}
+			if (stack.length) {
+				let top = stack.pop()
+				curr = top.right
+				list.push(top)
+			}
+		}
+	}
+	// 递归实现后序
+	BinaryTree.prototype.afterOrder = function (node) {
+		if (node === null) return
+		this.afterOrder(node.left)
+		this.afterOrder(node.right)
+		console.log(node.data.id)
+		this.afterOrderList.push(node)
+	}
+	// 迭代实现后序
+	/*
+	要保证根结点在左孩子和右孩子访问之后才能访问，因此对于任一结点P，先将其入栈。
+	如果P不存在左孩子和右孩子，则可以直接访问它；
+	或者P存在左孩子或者右孩子，但是其左孩子和右孩子都已被访问过了，则同样可以直接访问该结点。
+	若非上述两种情况，则将P的右孩子和左孩子依次入栈，这样就保证了每次取栈顶元素的时候，
+	左孩子在右孩子前面被访问，左孩子和右孩子都在根结点前面被访问。
+	*/
+	BinaryTree.prototype._afterOrder = function (node) {
+		if (node === null) return
+		let stack = []
+	  stack.push(node)
+	  let pre = null
+	  while(stack.length) {
+	    pre = stack[stack.length - 1]
+	    if(pre.left && node !== pre.left && node !== pre.right) {
+	      stack.push(pre.left)
+	      console.log('pre.left', pre.left.data.id)
+	    } else if(pre.right && node !== pre.right) {
+	      stack.push(pre.right)
+	      console.log('pre.right', pre.right.data.id)
+	    } else {
+	      console.log(stack.pop().data.id)
+	      node = pre
+	    }
+	  }
+	}
+	BinaryTree.prototype.clearPreOrderList = function (node) {
+		this.preOrderList.length = 0
+	}
+	
+	/*
+	* 按层遍历
+	*/ 
+	let layerData = []
+	BinaryTree.prototype.layerTravse = function (node) {
+		if (node) {
+			layerData.push(node)
+			if (node.left) {
+				layerData.push(node.left)
+				this.layerTravse(node.left.left)
+				this.layerTravse(node.left.right)
+			}
+			if (node.right) {
+				layerData.push(node.right)
+				this.layerTravse(node.right.left)
+				this.layerTravse(node.right.right)
+			}
+		}
+	}
+	/**
+	* 查找节点
+	**/ 
+	BinaryTree.prototype.find = function (data) {
+		let curr = this.root
+		while (curr) {
+			if (curr.data.id === data.id) {
+				return curr
+			} else {
+				if (curr.data.id > data.id) {
+					curr = curr.left
+				} else {
+					curr = curr.right
+				}
+			}
+		}
+	}
+	/**
+	* 查找节点链
+	**/ 
+	BinaryTree.prototype.findChain = function (data) {
+		let curr = this.root
+		let chain = []
+		while (curr) {
+			if (curr.data.id === data.id) {
+				break
+			} else {
+				if (curr.data.id > data.id) {
+					curr = curr.left
+				} else {
+					curr = curr.right
+				}
+			}
+		}
+		chain.push(curr)
+		while(curr.parent) {
+			chain.unshift(curr.parent)
+			curr = curr.parent
+		}
+		return chain
+	}
+	/*
+	* 获取最右节点
+	*/
+	BinaryTree.prototype.getFarRightNode = function () {
+		let curr = this.root
+		while (curr) {
+			if (curr.right) {
+				curr = curr.right
+			} else {
+				return curr
+			}
+		}
+	}
+	// let i = 0
+	// let nodes = []
+	// while (i < 40000) {
+	// 	let v = parseInt(Math.random() * Math.random() * 40000)
+	// 	nodes.push(v)
+	// 	i++
+	// }
+	// nodes = [...new Set(nodes)]
+	const bst = new BinaryTree();
+	// console.log(nodes.length)
+	// nodes.forEach(function(id){
+	// 	let t = bst.insert({ id });
+	// });
+	bst.insert({ id: 10, label: '录单'})
+	bst.insert({ id: 20, label: '待调入审批'})
+	bst.insert({ id: 15, label: '调入审批拒绝'})
+	bst.insert({ id: 30, label: '调入审批通过'})
+	bst.insert({ id: 40, label: '带调出审批'})
+	bst.insert({ id: 35, label: '调出审批拒绝'})
+	bst.insert({ id: 50, label: '调出审批通过'})
+	bst.insert({ id: 60, label: '待出库'})
+	bst.insert({ id: 70, label: '已出库'})
+	bst.insert({ id: 65, label: '物流信息'})
+	bst.preOrder(bst.root)
+
+
+	// 根据前序遍历和中序遍历计算出二叉树
+
+	let b2 = new BinaryTree()
+	b2.insert({ id: 5 })
+	b2.insert({ id: 3 })
+	b2.insert({ id: 7 })
+	b2.insert({ id: 1 })
+	b2.insert({ id: 4 })
+	b2.insert({ id: 6 })
+	b2.insert({ id: 8 })
+	b2.insert({ id: 0 })
+	b2.insert({ id: 2 })
+	b2.insert({ id: 9 })
+	b2._afterOrder(b2.root)
+	const app = new Vue({
+		el: '#app',
+		data: {
+			preOrderList: bst.preOrderList,
+			renderArr: bst.preOrderList,
+			mainChain: []
+		},
+		mounted () {
+			this.setRenderArr()
+			let chain = bst.findChain({ id: 70, label: '已出库'})
+			chain.forEach(n => {
+				console.log(n.data.label)	
+			})
+			this.mainChain = chain
+		},
+		methods: {
+			setRenderArr () {
+				this.renderArr = this.preOrderList.filter(node => node.visible)
+			},
+			clickChainNode (node) {
+				console.log(node)
+			},
+			clickNode (node) {
+				if (node.left) {
+					node.left.visible = true	
+				}
+				if (node.right) {
+					node.right.visible = true	
+				}
+				this.setRenderArr()
+			},
+			openAll () {
+				console.time('c')
+				let renderArr = []
+				this.preOrderList.forEach(node => {
+					node.visible = true
+					renderArr.push(node)
+				})
+				this.renderArr = renderArr
+				console.timeEnd('c')
+			}
+		}
+	})
+	console.log(bst.root)
+</script>
+</body>
+</html>
