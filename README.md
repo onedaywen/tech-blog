@@ -8,6 +8,7 @@
 * [koa源码解析](https://github.com/onedaywen/tech-blog/issues/40)
 * [connect中间件源码解析](https://github.com/onedaywen/tech-blog/issues/12)
 * [chrome55+调试nodejs](https://github.com/onedaywen/tech-blog/issues/39)
+* [os模块获取ip地址](https://github.com/onedaywen/tech-blog/issues/59)
 
 ## javascript
 * [window.location.href下载报403 BUG](https://github.com/onedaywen/tech-blog/issues/46)
