@@ -24,6 +24,7 @@
 * [多叉树的迭代遍历判断对象是否具有空值](https://github.com/onedaywen/tech-blog/issues/55)
 * [js实现call](https://github.com/onedaywen/tech-blog/issues/56)
 * [二叉树的先序递归遍历、迭代遍历](https://github.com/onedaywen/tech-blog/issues/57)
+* [async函数转换为error first](https://github.com/onedaywen/tech-blog/issues/60)
 
 
 ## mvc、mvvm框架
