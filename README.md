@@ -35,6 +35,7 @@
 * [vue-router源码分析](https://github.com/onedaywen/tech-blog/issues/4)
 * [Vue.use原理分析](https://github.com/onedaywen/tech-blog/issues/3)
 * [nextjs服务端渲染笔记](https://github.com/onedaywen/tech-blog/issues/58)
+* [单页history模式服务端配置](https://github.com/onedaywen/tech-blog/issues/61)
 
 ## 构建打包
 * [原生js实现最简单的webpack插件勾子机制](https://github.com/onedaywen/tech-blog/issues/25)
