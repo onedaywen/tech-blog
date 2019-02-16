@@ -25,7 +25,7 @@
 * [js实现call](https://github.com/onedaywen/tech-blog/issues/56)
 * [二叉树的先序递归遍历、迭代遍历](https://github.com/onedaywen/tech-blog/issues/57)
 * [async函数转换为error first](https://github.com/onedaywen/tech-blog/issues/60)
-* [如何实现函数功能add(1, 2)(3, 4, 5)(6, 7),输出28](https://github.com/onedaywen/tech-blog/issues/62)
+* [抽丝剥茧：实现函数功能add(1, 2)(3, 4, 5)(6, 7)](https://github.com/onedaywen/tech-blog/issues/62)
 
 
 ## mvc、mvvm框架
