@@ -26,6 +26,7 @@
 * [二叉树的先序递归遍历、迭代遍历](https://github.com/onedaywen/tech-blog/issues/57)
 * [async函数转换为error first](https://github.com/onedaywen/tech-blog/issues/60)
 * [抽丝剥茧：实现函数功能add(1, 2)(3, 4, 5)(6, 7)](https://github.com/onedaywen/tech-blog/issues/62)
+* [扁平化数组](https://github.com/onedaywen/tech-blog/issues/63)
 
 
 ## mvc、mvvm框架
