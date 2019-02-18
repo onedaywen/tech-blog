@@ -28,7 +28,7 @@
 * [抽丝剥茧：实现函数功能add(1, 2)(3, 4, 5)(6, 7)](https://github.com/onedaywen/tech-blog/issues/62)
 * [扁平化数组](https://github.com/onedaywen/tech-blog/issues/63)
 * [defineProperty劫持](https://github.com/onedaywen/tech-blog/issues/64)
-
+* [数组常用排序算法](https://github.com/onedaywen/tech-blog/issues/65)
 
 ## mvc、mvvm框架
 * [原生js实现最简单的vue实例勾子机制](https://github.com/onedaywen/tech-blog/issues/26)
