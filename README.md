@@ -50,9 +50,6 @@
 ## 业务场景思考
 * [复杂业务-多种状态下对应不同操作的优化](https://github.com/onedaywen/tech-blog/issues/16)
 
-## HTTP协议
-* [HTTP缓存浅析](https://github.com/onedaywen/tech-blog/issues/24)
-
 ## 设计模式
 * [工厂模式](https://github.com/onedaywen/tech-blog/issues/27)
 * [闭包实现单例模式-vue缓存编译模板](https://github.com/onedaywen/tech-blog/issues/28)
