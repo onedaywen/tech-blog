@@ -40,7 +40,6 @@
 ## 构建打包
 * [原生js实现最简单的webpack插件勾子机制](https://github.com/onedaywen/tech-blog/issues/25)
 * [webpack优化技巧](https://github.com/onedaywen/tech-blog/issues/23)
-* [wepback3.0+vue2.5+es6+vue+vuex-router3.0单入口单页脚手架搭建](https://github.com/onedaywen/tech-blog/issues/2)
 * [webpack-dev-middleware原理初探](https://github.com/onedaywen/tech-blog/issues/67)
 
 ## 业务场景思考
