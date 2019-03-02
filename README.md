@@ -23,7 +23,6 @@
 * [一维数组和多叉树的转换](https://github.com/onedaywen/tech-blog/issues/68)
 
 ## mvc、mvvm框架
-* [原生js实现最简单的vue实例勾子机制](https://github.com/onedaywen/tech-blog/issues/26)
 * [Vue.extend源码分析](https://github.com/onedaywen/tech-blog/issues/21)
 * [如何将常用弹窗操作Promise化](https://github.com/onedaywen/tech-blog/issues/20)
 * [vue mapState函数原理分析](https://github.com/onedaywen/tech-blog/issues/6)
